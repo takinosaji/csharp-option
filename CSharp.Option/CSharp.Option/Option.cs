@@ -4,7 +4,7 @@ namespace CSharp.Option
 {
     public class Option<T>
     {
-        public T Value { get; }
+        public T? Value { get; }
         public bool HasObject { get; }
 
         private Option()

@@ -21,8 +21,16 @@
                 : Option<T>.Some(@object);
         }
 
-        public static T? ToNullable<T>(this Option<T> option)
+        public static T? DefaultToNullable<T>(this Option<T> option)
             where T: struct
+        {
+            return option == Option<T>.None
+                ? null
+                : option.Value;
+        }
+
+        public static T? ToNullable<T>(this Option<T> option)
+            where T: class
         {
             return option == Option<T>.None
                 ? null
